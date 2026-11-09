@@ -1,0 +1,183 @@
+/* SmartLab Custom Stylesheet */
+:root {
+    --primary-color: #2563eb;
+    --primary-hover: #1d4ed8;
+    --secondary-color: #475569;
+    --success-color: #10b981;
+    --warning-color: #f59e0b;
+    --danger-color: #ef4444;
+    --info-color: #06b6d4;
+    --bg-light: #f8fafc;
+    --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+    --card-shadow-hover: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.05);
+}
+
+body {
+    background-color: var(--bg-light);
+    color: #1e293b;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-content {
+    flex: 1 0 auto;
+}
+
+/* Navbar */
+.navbar-custom {
+    background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
+    box-shadow: 0 2px 10px rgba(30, 58, 138, 0.15);
+}
+
+.navbar-custom .navbar-brand {
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.navbar-custom .nav-link {
+    font-weight: 500;
+    padding: 0.6rem 1rem !important;
+    border-radius: 6px;
+    transition: all 0.2s ease-in-out;
+}
+
+.navbar-custom .nav-link:hover,
+.navbar-custom .nav-link.active {
+    background-color: rgba(255, 255, 255, 0.18);
+    color: #ffffff !important;
+}
+
+/* Stat Cards on Dashboard */
+.stat-card {
+    border: none;
+    border-radius: 12px;
+    box-shadow: var(--card-shadow);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    overflow: hidden;
+    position: relative;
+}
+
+.stat-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--card-shadow-hover);
+}
+
+.stat-card .card-body {
+    padding: 1.5rem;
+}
+
+.stat-icon {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    font-size: 1.5rem;
+}
+
+/* Custom Card Container */
+.content-card {
+    border: none;
+    border-radius: 12px;
+    box-shadow: var(--card-shadow);
+    background: #ffffff;
+    margin-bottom: 2rem;
+}
+
+.content-card .card-header {
+    background-color: #ffffff;
+    border-bottom: 1px solid #f1f5f9;
+    padding: 1.25rem 1.5rem;
+    font-weight: 600;
+}
+
+.content-card .card-body {
+    padding: 1.5rem;
+}
+
+/* Tables */
+.table-custom {
+    margin-bottom: 0;
+    vertical-align: middle;
+}
+
+.table-custom thead th {
+    background-color: #f8fafc;
+    color: #475569;
+    font-weight: 600;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom: 1px solid #e2e8f0;
+    padding: 0.9rem 1rem;
+}
+
+.table-custom tbody td {
+    padding: 1rem;
+    color: #334155;
+    border-bottom: 1px solid #f1f5f9;
+    font-size: 0.925rem;
+}
+
+.table-custom tbody tr:hover {
+    background-color: #f8fafc;
+}
+
+/* Badges */
+.badge-status {
+    padding: 0.4em 0.75em;
+    font-weight: 600;
+    font-size: 0.8rem;
+    border-radius: 20px;
+}
+
+.badge-borrowed {
+    background-color: #fef3c7;
+    color: #92400e;
+    border: 1px solid #fde68a;
+}
+
+.badge-returned {
+    background-color: #d1fae5;
+    color: #065f46;
+    border: 1px solid #a7f3d0;
+}
+
+.badge-condition-good {
+    background-color: #dbeafe;
+    color: #1e40af;
+}
+
+.badge-condition-repair {
+    background-color: #ffedd5;
+    color: #9a3412;
+}
+
+.badge-condition-broken {
+    background-color: #fee2e2;
+    color: #991b1b;
+}
+
+/* Action Buttons */
+.btn-action {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.35rem;
+    font-weight: 500;
+    border-radius: 6px;
+    padding: 0.4rem 0.75rem;
+    font-size: 0.875rem;
+}
+
+/* Footer */
+footer {
+    background-color: #ffffff;
+    border-top: 1px solid #e2e8f0;
+    color: #64748b;
+    font-size: 0.875rem;
+    padding: 1.5rem 0;
+}
