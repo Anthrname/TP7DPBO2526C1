@@ -209,6 +209,7 @@ TP 7/
 │   └── db_smartlab.sql         # Struktur skema tabel, relasi FK, dan seed data
 │
 ├── docs/                       # Dokumentasi media dan gambar
+│   ├── TP7_Demo.mp4            # Rekaman video pengujian lengkap (dapat diputar di GitHub)
 │   └── img/                    # Animasi GIF pengujian fungsionalitas CRUD
 │       ├── crud_kategori.gif   # Demonstrasi CRUD Kategori
 │       ├── crud_perangkat.gif  # Demonstrasi CRUD Perangkat Lab
@@ -274,26 +275,37 @@ TP 7/
 
 ## DOKUMENTASI SCREEN RECORDING PENGUJIAN CRUD
 
-Berikut adalah dokumentasi animasi GIF pengujian langsung fungsionalitas **Create, Read, Update, Delete (CRUD)** untuk seluruh entitas sistem SmartLab:
+Berikut adalah dokumentasi pengujian fungsionalitas **Create, Read, Update, Delete (CRUD)** untuk seluruh entitas sistem SmartLab:
+
+> **Berkas Video Penuh**: Anda dapat memutar atau mengunduh rekaman video demonstrasi lengkap berdurasi penuh (MP4) langsung di GitHub melalui tautan berikut:  
+> [**docs/TP7_Demo.mp4**](docs/TP7_Demo.mp4)
+
+---
 
 ### 1. Pengujian CRUD Entitas Kategori
 Demonstrasi melihat daftar kategori, menambahkan kategori baru (kode: `NET-10`, nama: `Router Gacor`), serta memperbarui data kategori secara dinamis melalui modal.
 
-![Demonstrasi CRUD Kategori](docs/img/crud_kategori.gif)
+<p align="center">
+  <img src="https://raw.githubusercontent.com/Anthrname/TP7DPBO2526C1/main/docs/img/crud_kategori.gif" alt="Demonstrasi CRUD Kategori" width="800">
+</p>
 
 ---
 
 ### 2. Pengujian CRUD Entitas Perangkat Lab
 Demonstrasi melihat daftar inventaris perangkat lab yang terhubung dengan relasi Foreign Key ke Kategori, status kondisi fisik, pembaruan data alat, dan pengelolaan stok.
 
-![Demonstrasi CRUD Perangkat](docs/img/crud_perangkat.gif)
+<p align="center">
+  <img src="https://raw.githubusercontent.com/Anthrname/TP7DPBO2526C1/main/docs/img/crud_perangkat.gif" alt="Demonstrasi CRUD Perangkat" width="800">
+</p>
 
 ---
 
 ### 3. Pengujian Transaksi Peminjaman & Pengembalian Alat
 Demonstrasi pencatatan peminjaman baru (atas nama Najib Nurohman, NIM 2509653) yang secara otomatis mengurangi stok fisik alat sebesar 1 unit, verifikasi status pada dashboard, serta eksekusi pengembalian alat yang secara otomatis mengembalikan stok fisik alat sebesar 1 unit dengan notifikasi sukses.
 
-![Demonstrasi Transaksi Peminjaman](docs/img/crud_peminjaman.gif)
+<p align="center">
+  <img src="https://raw.githubusercontent.com/Anthrname/TP7DPBO2526C1/main/docs/img/crud_peminjaman.gif" alt="Demonstrasi Transaksi Peminjaman" width="800">
+</p>
 
 ---
 
