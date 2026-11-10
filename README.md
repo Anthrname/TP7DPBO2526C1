@@ -1,50 +1,50 @@
 # TP7DPBO2526C1 - TUGAS PRAKTIKUM 7 DPBO (OOP PHP DENGAN GUI & DATABASE)
 
-## 📌 JANJI
+## JANJI
 > Saya **Najib Nurohman** dengan NIM **2509653** mengerjakan **Tugas Praktikum 7** dalam mata kuliah **Desain Pemrograman Berorientasi Objek (DPBO)** untuk keberkahan-Nya maka saya tidak akan melakukan kecurangan seperti yang telah dispesifikasikan. Aamiin.
 
 ---
 
-## 📖 DESKRIPSI SISTEM
+## DESKRIPSI SISTEM
 **SmartLab** adalah aplikasi berbasis web dengan arsitektur **Object-Oriented Programming (OOP)** murni menggunakan bahasa pemrograman **PHP Native** dan driver database **PDO (PHP Data Objects)**. 
 
 Sistem ini dirancang untuk mengelola inventarisasi aset dan transaksi peminjaman perangkat pada laboratorium komputer (seperti modul jaringan, mikrokontroler IoT, server mini, dan perlengkapan multimedia). 
 
-### ✨ Fitur Utama Sistem:
+### Fitur Utama Sistem:
 1. **Penerapan OOP & Design Pattern**:
    - Struktur kode modular dan terorganisir rapi dalam folder `class/`, `config/`, `database/`, dan `view/`.
-   - Logika bisnis, manipulasi database, dan *rendering* antarmuka dipisahkan secara terstruktur (*Separation of Concerns*).
+   - Logika bisnis, manipulasi database, dan rendering antarmuka dipisahkan secara terstruktur (Separation of Concerns).
 2. **Keamanan Basis Data (100% Prepared Statement)**:
-   - Seluruh operasi database (*Create, Read, Update, Delete*) menggunakan **PDO Prepared Statements** berparameter (`$stmt = $pdo->prepare(...)` dan `$stmt->execute([...])`) untuk mencegah serangan *SQL Injection*.
-   - Tidak ada query mentah (*raw query string*) langsung.
+   - Seluruh operasi database (Create, Read, Update, Delete) menggunakan **PDO Prepared Statements** berparameter (`$stmt = $pdo->prepare(...)` dan `$stmt->execute([...])`) untuk mencegah serangan SQL Injection.
+   - Tidak ada query mentah (raw query string) langsung.
 3. **Database Transaction & Data Integrity**:
    - Transaksi peminjaman alat menerapkan `beginTransaction()`, `commit()`, dan `rollBack()` untuk menjaga sinkronisasi dan konsistensi stok alat.
    - Peminjaman baru otomatis memotong stok alat (`stock - 1`).
    - Pengembalian alat otomatis mengembalikan stok alat (`stock + 1`).
    - Penghapusan data peminjaman aktif otomatis merestorasi stok fisik alat.
 4. **Relasi Foreign Key dengan CASCADE**:
-   - Tabel `equipments` berelasi *Foreign Key* ke `categories` (`ON DELETE CASCADE ON UPDATE CASCADE`).
-   - Tabel `borrowings` berelasi *Foreign Key* ke `equipments` (`ON DELETE CASCADE ON UPDATE CASCADE`).
+   - Tabel `equipments` berelasi Foreign Key ke `categories` (`ON DELETE CASCADE ON UPDATE CASCADE`).
+   - Tabel `borrowings` berelasi Foreign Key ke `equipments` (`ON DELETE CASCADE ON UPDATE CASCADE`).
 5. **Fitur CRUD Penuh untuk Seluruh Entitas (3 Entitas)**:
-   - **Kategori Perangkat**: Tambah, Lihat, Edit, Hapus (*CRUD*).
-   - **Perangkat / Alat Lab**: Tambah, Lihat, Edit, Hapus (*CRUD*).
-   - **Transaksi Peminjaman**: Tambah, Lihat, Edit, Pengembalian (*Return*), Hapus (*CRUD*).
+   - **Kategori Perangkat**: Tambah, Lihat, Edit, Hapus (CRUD).
+   - **Perangkat / Alat Lab**: Tambah, Lihat, Edit, Hapus (CRUD).
+   - **Transaksi Peminjaman**: Tambah, Lihat, Edit, Pengembalian (Return), Hapus (CRUD).
 6. **Graphical User Interface (GUI) Responsif**:
    - Menggunakan Bootstrap 5.3, Bootstrap Icons, dan custom styling `style.css`.
-   - Dilengkapi dashboard statistik interaktif (*card summary* & ringkasan aktivitas).
-   - Menggunakan *modal popup* dinamis untuk penginputan, pengeditan, dan konfirmasi hapus data.
-   - *Flash notification alert* untuk feedback operasi CRUD kepada pengguna.
+   - Dilengkapi dashboard statistik interaktif (card summary & ringkasan aktivitas).
+   - Menggunakan modal popup dinamis untuk penginputan, pengeditan, dan konfirmasi hapus data.
+   - Flash notification alert untuk feedback operasi CRUD kepada pengguna.
 
 ---
 
-## 🗄️ STRUKTUR BASIS DATA & DESAIN RELASI
+## STRUKTUR BASIS DATA & DESAIN RELASI
 
 Aplikasi SmartLab memiliki **3 entitas tabel utama** yang saling berelasi:
 1. `categories` : Menyimpan master data kategori/pengelompokan perangkat lab.
-2. `equipments` : Menyimpan data unit perangkat lab dan memiliki relasi *Foreign Key* ke `categories`.
-3. `borrowings` : Menyimpan riwayat transaksi peminjaman/pengembalian dan memiliki relasi *Foreign Key* ke `equipments`.
+2. `equipments` : Menyimpan data unit perangkat lab dan memiliki relasi Foreign Key ke `categories`.
+3. `borrowings` : Menyimpan riwayat transaksi peminjaman/pengembalian dan memiliki relasi Foreign Key ke `equipments`.
 
-### 📊 Entity Relationship Diagram (ERD)
+### Entity Relationship Diagram (ERD)
 
 ```mermaid
 erDiagram
@@ -87,7 +87,7 @@ erDiagram
 
 ---
 
-## 🏗️ DESAIN KELAS OOP (CLASS DIAGRAM)
+## DESAIN KELAS OOP (CLASS DIAGRAM)
 
 ```mermaid
 classDiagram
@@ -158,7 +158,7 @@ classDiagram
 
 ---
 
-## 🔄 ALUR EKSEKUSI PROGRAM (FLOW OF CODE)
+## ALUR EKSEKUSI PROGRAM (FLOW OF CODE)
 
 Aplikasi mengikuti arsitektur **HTTP Request-Response Cycle** dan konsep **Front Controller**:
 
@@ -190,7 +190,7 @@ sequenceDiagram
 
 ---
 
-## 📁 STRUKTUR FOLDER PROYEK
+## STRUKTUR FOLDER PROYEK
 
 Sesuai dengan ketentuan pada Modul 8 Halaman 6:
 
@@ -207,6 +207,12 @@ TP 7/
 │
 ├── database/                   # Tempat penyimpanan skrip SQL
 │   └── db_smartlab.sql         # Struktur skema tabel, relasi FK, dan seed data
+│
+├── docs/                       # Dokumentasi media dan gambar
+│   └── img/                    # Animasi GIF pengujian fungsionalitas CRUD
+│       ├── crud_kategori.gif   # Demonstrasi CRUD Kategori
+│       ├── crud_perangkat.gif  # Demonstrasi CRUD Perangkat Lab
+│       └── crud_peminjaman.gif # Demonstrasi Peminjaman & Pengembalian
 │
 ├── view/                       # Tempat elemen antarmuka modular (GUI)
 │   ├── header.php              # Header HTML, meta, dan Bootstrap 5 CSS
@@ -225,7 +231,7 @@ TP 7/
 
 ---
 
-## 🚀 PANDUAN INSTALASI & MENJALANKAN SISTEM
+## PANDUAN INSTALASI & MENJALANKAN SISTEM
 
 ### Prasyarat:
 - Web server lokal: **Laragon** (direkomendasikan) atau **XAMPP**.
@@ -240,10 +246,10 @@ TP 7/
      ```
      database/db_smartlab.sql
      ```
-   - Skrip ini akan secara otomatis membuat database `db_smartlab`, tabel `categories`, `equipments`, dan `borrowings`, serta mengisikan data awal (*dummy seed data*).
+   - Skrip ini akan secara otomatis membuat database `db_smartlab`, tabel `categories`, `equipments`, dan `borrowings`, serta mengisikan data awal (dummy seed data).
 
 2. **Konfigurasi Database (Jika Berbeda)**:
-   - Pengaturan *default* pada `config/db.php`:
+   - Pengaturan default pada `config/db.php`:
      - Host: `localhost`
      - Database: `db_smartlab`
      - User: `root`
@@ -260,25 +266,38 @@ TP 7/
      ```
 
 4. **Akses Aplikasi**:
-   - Buka peramban (*web browser*) dan kunjungi:
+   - Buka peramban (web browser) dan kunjungi:
      - Melalui Laragon/XAMPP: `http://localhost/TP7DPBO2526C1/`
      - Melalui PHP Built-in Server: `http://localhost:8000/`
 
 ---
 
-## 📹 DOKUMENTASI SCREEN RECORDING PENGUJIAN CRUD
+## DOKUMENTASI SCREEN RECORDING PENGUJIAN CRUD
 
-Berikut adalah dokumentasi video uji coba operasional fitur **Create, Read, Update, Delete (CRUD)** untuk seluruh entitas (Kategori, Perangkat Lab, dan Peminjaman):
+Berikut adalah dokumentasi animasi GIF pengujian langsung fungsionalitas **Create, Read, Update, Delete (CRUD)** untuk seluruh entitas sistem SmartLab:
 
-- **Tautan Video Demonstrasi**: `[Tautan Video Screen Record CRUD]` *(Dapat disematkan link Google Drive / YouTube unlisted)*
-- **Cakupan Pengujian**:
-  1. **CRUD Kategori**: Tambah kategori baru, edit deskripsi, dan hapus.
-  2. **CRUD Perangkat**: Tambah perangkat baru dengan memilih kategori relasi, ubah kondisi & stok, serta hapus.
-  3. **CRUD Peminjaman**: Melakukan peminjaman alat (stok berkurang otomatis), memproses pengembalian alat (stok bertambah kembali), edit data transaksi, serta hapus catatan peminjaman.
+### 1. Pengujian CRUD Entitas Kategori
+Demonstrasi melihat daftar kategori, menambahkan kategori baru (kode: `NET-10`, nama: `Router Gacor`), serta memperbarui data kategori secara dinamis melalui modal.
+
+![Demonstrasi CRUD Kategori](docs/img/crud_kategori.gif)
 
 ---
 
-## 👨‍💻 IDENTITAS PENGEMBANG
+### 2. Pengujian CRUD Entitas Perangkat Lab
+Demonstrasi melihat daftar inventaris perangkat lab yang terhubung dengan relasi Foreign Key ke Kategori, status kondisi fisik, pembaruan data alat, dan pengelolaan stok.
+
+![Demonstrasi CRUD Perangkat](docs/img/crud_perangkat.gif)
+
+---
+
+### 3. Pengujian Transaksi Peminjaman & Pengembalian Alat
+Demonstrasi pencatatan peminjaman baru (atas nama Najib Nurohman, NIM 2509653) yang secara otomatis mengurangi stok fisik alat sebesar 1 unit, verifikasi status pada dashboard, serta eksekusi pengembalian alat yang secara otomatis mengembalikan stok fisik alat sebesar 1 unit dengan notifikasi sukses.
+
+![Demonstrasi Transaksi Peminjaman](docs/img/crud_peminjaman.gif)
+
+---
+
+## IDENTITAS PENGEMBANG
 
 | Keterangan | Detail |
 |---|---|

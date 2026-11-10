@@ -1,5 +1,10 @@
 <?php
 /**
+ * Janji:
+ * Saya Najib Nurohman dengan NIM 2509653 mengerjakan Tugas Praktikum 7 dalam mata kuliah
+ * Desain Pemrograman Berorientasi Objek (DPBO) untuk keberkahan-Nya maka saya tidak akan
+ * melakukan kecurangan seperti yang telah dispesifikasikan. Aamiin.
+ * 
  * Class Category
  * Bertanggung jawab mengelola data Kategori Perangkat Laboratorium
  * Menerapkan prinsip OOP dan seluruh query menggunakan PDO Prepared Statement

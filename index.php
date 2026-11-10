@@ -1,5 +1,10 @@
 <?php
 /**
+ * Janji:
+ * Saya Najib Nurohman dengan NIM 2509653 mengerjakan Tugas Praktikum 7 dalam mata kuliah
+ * Desain Pemrograman Berorientasi Objek (DPBO) untuk keberkahan-Nya maka saya tidak akan
+ * melakukan kecurangan seperti yang telah dispesifikasikan. Aamiin.
+ * 
  * SmartLab - Sistem Informasi Manajemen Inventaris & Peminjaman Alat Laboratorium Komputer
  * Front Controller & Routing Utama
  * Mata Kuliah: Desain dan Pemrograman Berorientasi Objek (DPBO)
